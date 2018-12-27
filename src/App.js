@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
+import ProductList from './component/ProductList'
 
-class ProductList extends Component {
+class App extends Component {
   render() {
     return (
-      <div className='ui unstackable items'>
-        Hello, friend! I am a basic React component.
-      </div>
+      <ProductList />
     );
   }
 }
 
-export default ProductList;
+export default App;
