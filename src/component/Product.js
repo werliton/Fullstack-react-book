@@ -2,7 +2,7 @@ import React from 'react'
 
 
 export default class Product extends React.Component {
-  
+
     handleUpVote = () =>{
         this.props.onVote(this.props.id)
     }

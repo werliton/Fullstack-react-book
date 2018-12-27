@@ -3,10 +3,20 @@ import Product from './Product'
 import {data} from '../dados'
 
 export default class ProductList extends Component{
-  state = {
-    order:'votes',
-    products:data
+  constructor(props){
+    super(props)
+
+    this.state = {
+      order:'votes',
+      products:[]
+    }
   }
+  
+
+  componentDidMount(){
+    this.setState({ products: data})
+  }
+
   _handleOrder = (order) =>{
     var products = []
     if(order === 'votes'){
@@ -22,9 +32,18 @@ export default class ProductList extends Component{
     this.setState({products})
   }
 
-  _handleProductUpVote(productId){
-    console.log(productId + ' was upvoted');
-    
+  _handleProductUpVote = (productId) =>{
+    const nextProducts = this.state.products.map( product => {
+      if(product.id === productId){
+        return Object.assign({}, product, {
+          votes: product.votes + 1
+        })
+      }else{
+        return product
+      }
+    })
+
+    this.setState({products: nextProducts })
   }
 
   render() {
