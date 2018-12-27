@@ -7,7 +7,7 @@ export default class Product extends React.Component {
         return (
             <div className='item'>
                 <div className='image'>
-                    <img src={this.props.productImageUrl} alt="asd" width={150}/>
+                    <img src={this.props.productImageUrl} alt="asd"/>
                 </div>
                 <div className='middle aligned content'>
                     <div className='description'>
@@ -30,7 +30,6 @@ export default class Product extends React.Component {
                         <img alt="asd"
                         className='ui avatar image'
                         src={this.props.submitterAvatarUrl}
-                        width={80}
                         />
                         </div>
                         </div>
