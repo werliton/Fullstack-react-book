@@ -3,6 +3,10 @@ import React from 'react'
 
 export default class Product extends React.Component {
   
+    handleUpVote = () =>{
+        this.props.onVote(this.props.id)
+    }
+
     render() {
         return (
             <div className='item'>
@@ -11,7 +15,7 @@ export default class Product extends React.Component {
                 </div>
                 <div className='middle aligned content'>
                     <div className='description'>
-                    <a href={this.props.url}>
+                    <a href={this.props.url} onClick={this.handleUpVote}>
                         <i className='large caret up icon' />
                     </a>
                     {this.props.votes}

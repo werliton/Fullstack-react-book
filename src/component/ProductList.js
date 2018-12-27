@@ -22,6 +22,11 @@ export default class ProductList extends Component{
     this.setState({products})
   }
 
+  _handleProductUpVote(productId){
+    console.log(productId + ' was upvoted');
+    
+  }
+
   render() {
     
     const productComponents = this.state.products.map((product, key) => (
@@ -34,6 +39,7 @@ export default class ProductList extends Component{
             votes={product.votes}
             submitterAvatarUrl={product.submitter_avatar_url}
             productImageUrl={product.product_image_url}
+            onVote={this._handleProductUpVote}
         />
     ))
     
