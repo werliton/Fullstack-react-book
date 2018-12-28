@@ -8,6 +8,9 @@
 # testing
 /coverage
 
+#1-vouting
+/1-vouting_app/node_modules
+
 # production
 /build
 
